@@ -1,0 +1,163 @@
+[gd_scene load_steps=12 format=3 uid="uid://bke21t2cjlkui"]
+
+[ext_resource type="Script" path="res://scenes/theater_manager/theater_manager.gd" id="1_cuy4m"]
+[ext_resource type="PackedScene" uid="uid://b8etv8fibn8p8" path="res://scenes/ui/health_ui.tscn" id="2_ancfu"]
+[ext_resource type="Resource" uid="uid://dp734ni2arcse" path="res://scenes/run/run_startup.tres" id="2_j30ew"]
+[ext_resource type="PackedScene" uid="uid://d3tb8x24i33ud" path="res://scenes/ui/gold_ui.tscn" id="3_0361w"]
+[ext_resource type="PackedScene" uid="uid://draflho5ibh28" path="res://scenes/relic_handler/relic_handler.tscn" id="4_kvie3"]
+[ext_resource type="PackedScene" uid="uid://buvf0es4eaqsa" path="res://scenes/ui/card_pile_opener.tscn" id="5_bcefi"]
+[ext_resource type="Texture2D" uid="uid://bv3774b2l2iwc" path="res://art/deck.png" id="6_ihr5a"]
+[ext_resource type="PackedScene" uid="uid://bhv7jstttkgme" path="res://scenes/ui/card_pile_view.tscn" id="7_dcuoi"]
+[ext_resource type="PackedScene" uid="uid://di3d1phqn3cdt" path="res://scenes/relic_handler/relic_tooltip.tscn" id="8_xq225"]
+[ext_resource type="Script" path="res://scenes/run/pause_menu.gd" id="9_x8sum"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0fa5t"]
+
+[node name="TheaterManager" type="Node"]
+script = ExtResource("1_cuy4m")
+run_startup = ExtResource("2_j30ew")
+
+[node name="CurrentTheater" type="Node" parent="."]
+
+[node name="DebugButtons" type="VBoxContainer" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+alignment = 1
+
+[node name="LairButton" type="Button" parent="DebugButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Lair"
+
+[node name="ExploreButton" type="Button" parent="DebugButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Explore"
+
+[node name="SocializeButton" type="Button" parent="DebugButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Socialize"
+
+[node name="FarmButton" type="Button" parent="DebugButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Farm"
+
+[node name="TopBar" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Background" type="ColorRect" parent="TopBar"]
+custom_minimum_size = Vector2(0, 18)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="MarginContainer" type="MarginContainer" parent="TopBar"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 18.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 2
+
+[node name="BarItems" type="HBoxContainer" parent="TopBar/MarginContainer"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+
+[node name="HealthUI" parent="TopBar/MarginContainer/BarItems" instance=ExtResource("2_ancfu")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+show_max_hp = true
+
+[node name="GoldUI" parent="TopBar/MarginContainer/BarItems" instance=ExtResource("3_0361w")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="RelicHandlerContainer" type="CenterContainer" parent="TopBar/MarginContainer/BarItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RelicHandler" parent="TopBar/MarginContainer/BarItems/RelicHandlerContainer" instance=ExtResource("4_kvie3")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="DeckButton" parent="TopBar/MarginContainer/BarItems" node_paths=PackedStringArray("counter") instance=ExtResource("5_bcefi")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("6_ihr5a")
+counter = NodePath("Counter")
+
+[node name="Counter" type="Label" parent="TopBar/MarginContainer/BarItems/DeckButton"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 12.0
+offset_right = 8.0
+offset_bottom = 18.0
+text = "99"
+horizontal_alignment = 1
+
+[node name="DeckView" parent="TopBar" instance=ExtResource("7_dcuoi")]
+unique_name_in_owner = true
+visible = false
+
+[node name="RelicTooltip" parent="TopBar" instance=ExtResource("8_xq225")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 6
+visible = false
+script = ExtResource("9_x8sum")
+
+[node name="PauseBackground" type="ColorRect" parent="PauseMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.615686)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -20.0
+offset_right = 33.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="PauseText" type="Label" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Paused"
+label_settings = SubResource("LabelSettings_0fa5t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BackToGameButton" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 14)
+layout_mode = 2
+text = "Back"
+
+[node name="SaveAndQuitButton" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+text = "Main Menu"

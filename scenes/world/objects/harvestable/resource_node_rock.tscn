@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://e0stkfgnsa1x"]
+
+[ext_resource type="Script" path="res://scenes/world/objects/harvestable/resource_node_rock.gd" id="1_3tm76"]
+[ext_resource type="Texture2D" uid="uid://o5q8trqybuoc" path="res://art/tileset/tileset.png" id="1_dhmib"]
+[ext_resource type="Resource" uid="uid://k473tbb2poaa" path="res://scenes/world/objects/harvestable/types/minable_resource.tres" id="2_3c6bx"]
+[ext_resource type="PackedScene" uid="uid://b6g0ra2g5v6b6" path="res://scenes/world/objects/pickups/pickup_rock.tscn" id="3_piloy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tbsxt"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkijx"]
+atlas = ExtResource("1_dhmib")
+region = Rect2(112, 0, 16, 16)
+
+[node name="ResourceNodeRock" type="StaticBody2D"]
+collision_layer = 16640
+collision_mask = 256
+script = ExtResource("1_3tm76")
+node_type = ExtResource("2_3c6bx")
+starting_resources = 5
+pickup_dropped = ExtResource("3_piloy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tbsxt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_rkijx")

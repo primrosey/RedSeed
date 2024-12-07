@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://bjblj7m2fviy7"]
+
+[ext_resource type="Texture2D" uid="uid://ck1t4hdip6xrl" path="res://art/tile_0119.png" id="1_ghlru"]
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_axe_attack.gd" id="2_m1ral"]
+[ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://art/axe.ogg" id="3_t3qsf"]
+[ext_resource type="Script" path="res://custom_resources/text_format.gd" id="4_wccsv"]
+[ext_resource type="Resource" uid="uid://ct6yqh1o1vp7w" path="res://effects/text format/damage_text_format.tres" id="5_nsxe0"]
+
+[resource]
+script = ExtResource("2_m1ral")
+id = "warrior_axe_attack"
+type = null
+rarity = null
+target = 1
+cost = 1
+exhausts = null
+icon = ExtResource("1_ghlru")
+tooltip_text = "Deal %s damage!"
+text_formats = Array[ExtResource("4_wccsv")]([ExtResource("5_nsxe0")])
+sound = ExtResource("3_t3qsf")

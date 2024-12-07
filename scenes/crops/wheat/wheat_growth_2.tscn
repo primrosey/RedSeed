@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dydq1u6m3tmm8"]
+
+[ext_resource type="Texture2D" uid="uid://cjusvtuutcr47" path="res://art/crops/wheat.png" id="1_q76vn"]
+[ext_resource type="Script" path="res://scenes/components/aging_component.gd" id="2_rhrve"]
+[ext_resource type="PackedScene" uid="uid://c2a7bfckde8qt" path="res://scenes/crops/wheat/wheat_growth_3.tscn" id="3_vugos"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdubc"]
+atlas = ExtResource("1_q76vn")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vydg0"]
+size = Vector2(26, 27)
+
+[node name="WheatGrowth2" type="StaticBody2D"]
+collision_layer = 16640
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = SubResource("AtlasTexture_rdubc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_vydg0")
+
+[node name="AgingComponent" type="Node" parent="."]
+script = ExtResource("2_rhrve")
+age_threashold = 3.0
+next_scene = ExtResource("3_vugos")

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://dgwvmj0c10jey"]
+
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/tile_0087.png" id="1_lt7a2"]
+[ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_qp8yo"]
+[ext_resource type="Resource" uid="uid://bvvqnxsryl3yf" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_26wsq"]
+[ext_resource type="Resource" uid="uid://dkv8b5gf5vb1x" path="res://characters/warrior/warrior_starting_deck.tres" id="3_wdloa"]
+[ext_resource type="Resource" uid="uid://cfydnx43n0sbb" path="res://relics/healing_potion.tres" id="5_uvabn"]
+
+[resource]
+script = ExtResource("1_qp8yo")
+character_name = "Warrior"
+description = "Here to axe a question."
+portrait = ExtResource("1_lt7a2")
+starting_deck = ExtResource("3_wdloa")
+draftable_cards = ExtResource("2_26wsq")
+cards_per_turn = 4
+max_mana = 3
+starting_relic = ExtResource("5_uvabn")
+max_health = 35
+art = ExtResource("1_lt7a2")

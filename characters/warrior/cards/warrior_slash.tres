@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://c00tu56d7uix7"]
+
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_slash.gd" id="1_7rhqo"]
+[ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="1_8eowo"]
+[ext_resource type="Script" path="res://custom_resources/text_format.gd" id="3_1nmqn"]
+[ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://art/axe.ogg" id="3_u1qo1"]
+[ext_resource type="Resource" uid="uid://ct6yqh1o1vp7w" path="res://effects/text format/damage_text_format.tres" id="5_rwmrf"]
+
+[resource]
+script = ExtResource("1_7rhqo")
+id = "warrior_slash"
+type = 0
+rarity = 0
+target = 2
+cost = 2
+exhausts = false
+icon = ExtResource("1_8eowo")
+tooltip_text = "Deal %s damage to all enemies"
+text_formats = Array[ExtResource("3_1nmqn")]([ExtResource("5_rwmrf")])
+sound = ExtResource("3_u1qo1")

@@ -1,0 +1,49 @@
+[gd_scene load_steps=14 format=3 uid="uid://dbwlxekw5exrj"]
+
+[ext_resource type="Script" path="res://scenes/emeny/enemy_action_picker.gd" id="1_18gdl"]
+[ext_resource type="Script" path="res://enemies/toxic_ghost/toxic_ghost_muscle_buff_action.gd" id="2_gv1cn"]
+[ext_resource type="Texture2D" uid="uid://cn2c1psh561cc" path="res://art/tile_0127.png" id="3_whayr"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_5bd5c"]
+[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/enemy_block.ogg" id="5_36mms"]
+[ext_resource type="Script" path="res://enemies/toxic_ghost/toxic_ghost_attack_action.gd" id="6_ohhmg"]
+[ext_resource type="Texture2D" uid="uid://dhoandwxl12u7" path="res://art/attack_negative.png" id="7_4nmx3"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="8_mjqqj"]
+[ext_resource type="Script" path="res://enemies/toxic_ghost/toxic_ghost_block_action.gd" id="9_uctgw"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="10_04j8j"]
+
+[sub_resource type="Resource" id="Resource_gh7qe"]
+script = ExtResource("4_5bd5c")
+base_text = ""
+icon = ExtResource("3_whayr")
+
+[sub_resource type="Resource" id="Resource_gjjx6"]
+script = ExtResource("4_5bd5c")
+base_text = "%s"
+icon = ExtResource("7_4nmx3")
+
+[sub_resource type="Resource" id="Resource_tiy5v"]
+script = ExtResource("4_5bd5c")
+base_text = ""
+icon = ExtResource("10_04j8j")
+
+[node name="ToxicGhostAI" type="Node"]
+script = ExtResource("1_18gdl")
+
+[node name="MuscleBuffAction" type="Node" parent="."]
+script = ExtResource("2_gv1cn")
+intent = SubResource("Resource_gh7qe")
+sound = ExtResource("5_36mms")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("6_ohhmg")
+intent = SubResource("Resource_gjjx6")
+sound = ExtResource("8_mjqqj")
+type = 1
+chance_weight = 6.5
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("9_uctgw")
+intent = SubResource("Resource_tiy5v")
+sound = ExtResource("5_36mms")
+type = 1
+chance_weight = 3.5

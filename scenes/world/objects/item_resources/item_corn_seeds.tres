@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://d0uvmklhbsmwq"]
+
+[ext_resource type="Script" path="res://scenes/world/objects/item_resources/item_resource.gd" id="1_bc001"]
+[ext_resource type="Texture2D" uid="uid://b6tpr6rq8wgba" path="res://art/crops/corn.png" id="2_anipq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5wyb"]
+atlas = ExtResource("2_anipq")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_bc001")
+texture = SubResource("AtlasTexture_t5wyb")
+display_name = "Corn Seeds"

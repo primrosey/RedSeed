@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcugqqwabgy7e"]
+
+[ext_resource type="Script" path="res://scenes/win_screen/win_screen.gd" id="1_1hx5h"]
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/tile_0087.png" id="3_ku3uh"]
+
+[sub_resource type="Gradient" id="Gradient_f0706"]
+colors = PackedColorArray(0.239216, 0.129412, 0.0705882, 1, 0.054902, 0, 0.0588235, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x4bqt"]
+gradient = SubResource("Gradient_f0706")
+width = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_bkh18"]
+line_spacing = 6.0
+font_size = 10
+shadow_size = 4
+shadow_color = Color(0.406643, 0.186816, 0.110188, 1)
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1hx5h")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_x4bqt")
+
+[node name="VboxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -22.5
+offset_right = 103.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Message" type="Label" parent="VboxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "The %s is victorious!"
+label_settings = SubResource("LabelSettings_bkh18")
+horizontal_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="VboxContainer"]
+custom_minimum_size = Vector2(60, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Main Menu
+"
+
+[node name="CharacterPortrait" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -30.0
+offset_right = -42.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ku3uh")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="VboxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

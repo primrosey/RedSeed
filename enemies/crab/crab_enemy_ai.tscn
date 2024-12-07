@@ -1,0 +1,49 @@
+[gd_scene load_steps=14 format=3 uid="uid://b7cr0040byyfj"]
+
+[ext_resource type="Script" path="res://scenes/emeny/enemy_action_picker.gd" id="1_trvcc"]
+[ext_resource type="Script" path="res://enemies/crab/crab_attack_action.gd" id="2_2r1o0"]
+[ext_resource type="Script" path="res://enemies/crab/crab_block_action.gd" id="3_ubt6m"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/tile_0103.png" id="3_yem23"]
+[ext_resource type="Script" path="res://enemies/crab/crab_mega_block_action.gd" id="4_abt5n"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_bum4w"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="5_rq8c5"]
+[ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://art/tile_0101.png" id="6_02t10"]
+[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/enemy_block.ogg" id="8_2fqtb"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="8_4t0bh"]
+
+[sub_resource type="Resource" id="Resource_m6x0y"]
+script = ExtResource("4_bum4w")
+base_text = "%s"
+icon = ExtResource("3_yem23")
+
+[sub_resource type="Resource" id="Resource_kr4yi"]
+script = ExtResource("4_bum4w")
+base_text = "6"
+icon = ExtResource("6_02t10")
+
+[sub_resource type="Resource" id="Resource_wnote"]
+script = ExtResource("4_bum4w")
+base_text = "15"
+icon = ExtResource("8_4t0bh")
+
+[node name="CrabEnemyAI" type="Node"]
+script = ExtResource("1_trvcc")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_2r1o0")
+intent = SubResource("Resource_m6x0y")
+sound = ExtResource("5_rq8c5")
+type = 1
+chance_weight = 1.0
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("3_ubt6m")
+intent = SubResource("Resource_kr4yi")
+sound = ExtResource("8_2fqtb")
+type = 1
+chance_weight = 1.0
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("4_abt5n")
+intent = SubResource("Resource_wnote")
+sound = ExtResource("8_2fqtb")

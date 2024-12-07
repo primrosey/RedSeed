@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TextFormat" load_steps=2 format=3 uid="uid://ct6yqh1o1vp7w"]
+
+[ext_resource type="Script" path="res://custom_resources/text_format.gd" id="1_pk0s5"]
+
+[resource]
+script = ExtResource("1_pk0s5")
+color = Color(0.945098, 0, 0, 1)
+bold = false
+italics = false
+underline = false

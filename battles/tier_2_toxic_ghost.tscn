@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnd8wh25c0ut6"]
+
+[ext_resource type="PackedScene" uid="uid://cc11brwbl5jgd" path="res://scenes/emeny/enemy.tscn" id="1_ydl23"]
+[ext_resource type="Resource" uid="uid://dfn7k0m8vpyg5" path="res://enemies/toxic_ghost/toxic_ghost.tres" id="2_4mh6w"]
+
+[node name="Tier2ToxicGhost" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_ydl23")]
+stats = ExtResource("2_4mh6w")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://yowevj5o2bq8"]
+
+[ext_resource type="Texture2D" uid="uid://o5q8trqybuoc" path="res://assets/tileset/tileset.png" id="1_rfkpr"]
+[ext_resource type="Script" path="res://scenes/components/aging_component.gd" id="2_c58sn"]
+[ext_resource type="PackedScene" uid="uid://clnfqj5unamlm" path="res://scenes/crops/first/first_crop_growth_2.tscn" id="3_ekgpm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvmm1"]
+atlas = ExtResource("1_rfkpr")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eu21l"]
+size = Vector2(16, 16)
+
+[node name="FirstCropGrowth1" type="Area2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_qvmm1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eu21l")
+
+[node name="AgingComponent" type="Node" parent="."]
+script = ExtResource("2_c58sn")
+age_threashold = 2.0
+next_scene = ExtResource("3_ekgpm")

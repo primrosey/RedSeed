@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccst1yod675ne"]
+
+[ext_resource type="Texture2D" uid="uid://decsngfcmumon" path="res://art/blood.png" id="2_t0w01"]
+
+[node name="BloodUI" type="HBoxContainer"]
+theme_override_constants/separation = 0
+
+[node name="BloodImage" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_t0w01")
+stretch_mode = 5
+
+[node name="Spacer" type="Control" parent="."]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+
+[node name="BloodLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxBloodLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "/3"
+horizontal_alignment = 1
+vertical_alignment = 1

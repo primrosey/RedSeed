@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bbc8278wyhrpy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wn18o"]
+bg_color = Color(0.741176, 0.32549, 0.329412, 0.631373)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.252028, 0.252028, 0.252027, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wugw7"]
+
+[resource]
+default_font_size = 12
+Button/styles/disabled = SubResource("StyleBoxFlat_wn18o")
+Button/styles/focus = SubResource("StyleBoxEmpty_wugw7")

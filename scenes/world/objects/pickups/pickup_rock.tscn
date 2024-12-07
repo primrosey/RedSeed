@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6g0ra2g5v6b6"]
+
+[ext_resource type="Script" path="res://scenes/world/objects/pickups/pickup.gd" id="1_wffmq"]
+[ext_resource type="Resource" uid="uid://dksvtagu0a3tj" path="res://scenes/world/objects/item_resources/item_rock.tres" id="2_ieivo"]
+[ext_resource type="Texture2D" uid="uid://o5q8trqybuoc" path="res://art/tileset/tileset.png" id="2_m2yso"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs073"]
+atlas = ExtResource("2_m2yso")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dng2x"]
+radius = 11.0
+
+[node name="PickupRock" type="Area2D"]
+collision_layer = 256
+collision_mask = 256
+script = ExtResource("1_wffmq")
+resource_type = ExtResource("2_ieivo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_fs073")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dng2x")

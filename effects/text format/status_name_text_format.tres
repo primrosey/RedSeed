@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TextFormat" load_steps=2 format=3 uid="uid://c1qfr07lgvmvr"]
+
+[ext_resource type="Script" path="res://custom_resources/text_format.gd" id="1_augay"]
+
+[resource]
+script = ExtResource("1_augay")
+color = Color(0.715333, 0.74, 0, 1)
+bold = true
+italics = false
+underline = false

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://coniptm3xv3qe"]
+
+[ext_resource type="Texture2D" uid="uid://psr6xk3k26oh" path="res://art/tile_0114.png" id="1_po0ef"]
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_tcwov"]
+[ext_resource type="Script" path="res://custom_resources/text_format.gd" id="3_ah0lf"]
+
+[resource]
+script = ExtResource("1_tcwov")
+id = "toxin"
+type = 1
+rarity = null
+target = null
+cost = 1
+exhausts = true
+icon = ExtResource("1_po0ef")
+tooltip_text = "[center]Slows you down. Does nothing.[/center]"
+text_formats = Array[ExtResource("3_ah0lf")]([])

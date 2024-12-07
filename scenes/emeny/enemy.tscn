@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://cc11brwbl5jgd"]
+
+[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://art/tile_0110.png" id="1_67cgi"]
+[ext_resource type="Script" path="res://scenes/emeny/enemy.gd" id="1_rseal"]
+[ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="2_rdng3"]
+[ext_resource type="PackedScene" uid="uid://c4ppl6i0hv4aa" path="res://scenes/ui/stats_ui.tscn" id="3_n7iqn"]
+[ext_resource type="PackedScene" uid="uid://bboqb0n5vqvao" path="res://scenes/ui/intent_ui.tscn" id="5_d5mqi"]
+[ext_resource type="PackedScene" uid="uid://bgr2fkwmnj6j7" path="res://scenes/status_handler/status_handler.tscn" id="6_28xux"]
+[ext_resource type="PackedScene" uid="uid://c5ueq7elw32xh" path="res://scenes/modifier_handler/modifier_handler.tscn" id="7_l51s5"]
+[ext_resource type="PackedScene" uid="uid://dq4v4p32b10es" path="res://scenes/modifier_handler/modifier.tscn" id="8_fdydl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn1hp"]
+
+[node name="Enemy" type="Area2D" groups=["enemies"]]
+collision_layer = 4
+script = ExtResource("1_rseal")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_67cgi")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(15, 0)
+rotation = -1.5708
+texture = ExtResource("2_rdng3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mn1hp")
+
+[node name="StatsUI" parent="." instance=ExtResource("3_n7iqn")]
+offset_top = 7.0
+offset_bottom = 23.0
+
+[node name="IntentUI" parent="." instance=ExtResource("5_d5mqi")]
+offset_top = -24.0
+offset_bottom = -10.0
+
+[node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("6_28xux")]
+offset_left = -30.0
+offset_top = 21.0
+offset_bottom = 31.0
+status_owner = NodePath("..")
+
+[node name="ModifierHandler" parent="." instance=ExtResource("7_l51s5")]
+
+[node name="DamageDealtModifier" parent="ModifierHandler" instance=ExtResource("8_fdydl")]
+
+[node name="DamageTakenModifier" parent="ModifierHandler" instance=ExtResource("8_fdydl")]
+type = 1
+
+[node name="BlockGainedModifier" parent="ModifierHandler" instance=ExtResource("8_fdydl")]
+type = 2
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

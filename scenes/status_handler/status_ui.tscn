@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5ju66r5dnjxl"]
+
+[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://art/heart.png" id="1_4rcqg"]
+[ext_resource type="Script" path="res://scenes/status_handler/status_ui.gd" id="1_047r5"]
+[ext_resource type="Resource" uid="uid://c5y8f8lo7i6gy" path="res://statuses/true_strength_form.tres" id="2_6w6or"]
+
+[node name="StatusUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_047r5")
+status = ExtResource("2_6w6or")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+texture = ExtResource("1_4rcqg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Duration" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 15.0
+offset_bottom = 11.0
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stacks" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 15.0
+offset_bottom = 11.0
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1

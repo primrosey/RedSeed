@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdnswx4dut234"]
+
+[ext_resource type="Texture2D" uid="uid://cjusvtuutcr47" path="res://art/crops/wheat.png" id="1_hvhis"]
+[ext_resource type="Script" path="res://scenes/ui/farm/hotbar_slot_button.gd" id="2_h3vtf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx3nk"]
+atlas = ExtResource("1_hvhis")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_byegf"]
+font_size = 10
+
+[node name="HotbarSlotButton" type="Button"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -544.0
+offset_bottom = -292.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/icon_max_width = 24
+icon = SubResource("AtlasTexture_gx3nk")
+icon_alignment = 1
+script = ExtResource("2_h3vtf")
+
+[node name="CountLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "99"
+label_settings = SubResource("LabelSettings_byegf")
+horizontal_alignment = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

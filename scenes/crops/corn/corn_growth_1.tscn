@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3tgy185vdjkc"]
+
+[ext_resource type="Texture2D" uid="uid://b6tpr6rq8wgba" path="res://art/crops/corn.png" id="1_dkw6b"]
+[ext_resource type="Script" path="res://scenes/components/aging_component.gd" id="2_hs6a7"]
+[ext_resource type="PackedScene" uid="uid://chun8caea8ccr" path="res://scenes/crops/corn/corn_growth_2.tscn" id="3_vlaec"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i23ly"]
+atlas = ExtResource("1_dkw6b")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0mw1k"]
+radius = 8.0
+
+[node name="CornGrowth1" type="Area2D"]
+collision_layer = 16640
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = SubResource("AtlasTexture_i23ly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 26)
+shape = SubResource("CircleShape2D_0mw1k")
+
+[node name="AgingComponent" type="Node" parent="."]
+script = ExtResource("2_hs6a7")
+age_threashold = 2.0
+next_scene = ExtResource("3_vlaec")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://dksvtagu0a3tj"]
+
+[ext_resource type="Script" path="res://scenes/world/objects/item_resources/item_resource.gd" id="1_784fa"]
+[ext_resource type="Texture2D" uid="uid://o5q8trqybuoc" path="res://art/tileset/tileset.png" id="2_lxc41"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awxe8"]
+atlas = ExtResource("2_lxc41")
+region = Rect2(96, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_784fa")
+texture = SubResource("AtlasTexture_awxe8")
+display_name = "Rock"

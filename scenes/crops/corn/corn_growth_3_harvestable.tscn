@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://l4cawkqnn8pn"]
+
+[ext_resource type="Texture2D" uid="uid://b6tpr6rq8wgba" path="res://art/crops/corn.png" id="1_1hec8"]
+[ext_resource type="Script" path="res://scenes/crops/corn/corn_growth_3_harvestable.gd" id="1_iifho"]
+[ext_resource type="Resource" uid="uid://k473tbb2poaa" path="res://scenes/world/objects/harvestable/types/minable_resource.tres" id="2_5h174"]
+[ext_resource type="PackedScene" uid="uid://br4ydn1skqbh8" path="res://scenes/world/objects/pickups/pickup_corn_seeds.tscn" id="3_20d30"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_485r7"]
+atlas = ExtResource("1_1hec8")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f72ap"]
+radius = 8.0
+
+[node name="CornGrowth3Harvestable" type="StaticBody2D"]
+position = Vector2(0, -16)
+collision_layer = 16640
+collision_mask = 0
+script = ExtResource("1_iifho")
+node_type = ExtResource("2_5h174")
+starting_resources = 3
+pickup_dropped = ExtResource("3_20d30")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
+texture = SubResource("AtlasTexture_485r7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 26)
+shape = SubResource("CircleShape2D_f72ap")

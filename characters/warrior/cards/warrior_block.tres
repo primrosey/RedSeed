@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://daraki7s3i1sv"]
+
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="1_c8022"]
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_block.gd" id="2_odb5q"]
+[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://art/block.ogg" id="3_t6uek"]
+[ext_resource type="Script" path="res://custom_resources/text_format.gd" id="4_x5hhw"]
+[ext_resource type="Resource" uid="uid://c8dd88750hh24" path="res://effects/text format/block_text_format.tres" id="5_2d3q6"]
+
+[resource]
+script = ExtResource("2_odb5q")
+id = "warrior_block"
+type = 1
+rarity = 0
+target = 0
+cost = 1
+exhausts = false
+icon = ExtResource("1_c8022")
+tooltip_text = "Gain %s block"
+text_formats = Array[ExtResource("4_x5hhw")]([ExtResource("5_2d3q6")])
+sound = ExtResource("3_t6uek")

@@ -1,0 +1,82 @@
+[gd_scene load_steps=14 format=3 uid="uid://dj67y4b5adq5p"]
+
+[ext_resource type="Script" path="res://scenes/ui/farm/inventory_hotbar.gd" id="1_vrql4"]
+[ext_resource type="PackedScene" uid="uid://cdnswx4dut234" path="res://scenes/ui/farm/hotbar_slot_button.tscn" id="2_a62lo"]
+[ext_resource type="Resource" uid="uid://c4t7vhdcbdkci" path="res://scenes/equipment/axe_copper.tres" id="3_qn1jy"]
+[ext_resource type="Resource" uid="uid://nxo1q6ha23o4" path="res://scenes/equipment/hoe_copper.tres" id="4_rkodv"]
+[ext_resource type="Resource" uid="uid://c4j4j26pfcybg" path="res://scenes/equipment/pickaxe_copper.tres" id="5_gpg4s"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_h5j4w"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_r5x52"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ygkq4"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ajsg5"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_nhn1h"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_x0gc0"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ijyyu"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_i2tbw"]
+
+[node name="InventoryHotbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrql4")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -28.0
+offset_right = 40.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 8
+
+[node name="HotbarSlotButton" parent="GridContainer" instance=ExtResource("2_a62lo")]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_h5j4w")
+current_item = ExtResource("3_qn1jy")
+
+[node name="HotbarSlotButton2" parent="GridContainer" instance=ExtResource("2_a62lo")]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_r5x52")
+current_item = ExtResource("4_rkodv")
+
+[node name="HotbarSlotButton3" parent="GridContainer" instance=ExtResource("2_a62lo")]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_ygkq4")
+current_item = ExtResource("5_gpg4s")
+
+[node name="HotbarSlotButton4" parent="GridContainer" instance=ExtResource("2_a62lo")]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_ajsg5")
+
+[node name="HotbarSlotButton5" parent="GridContainer" instance=ExtResource("2_a62lo")]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_nhn1h")
+
+[node name="HotbarSlotButton6" parent="GridContainer" instance=ExtResource("2_a62lo")]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_x0gc0")
+
+[node name="HotbarSlotButton7" parent="GridContainer" instance=ExtResource("2_a62lo")]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_ijyyu")
+
+[node name="HotbarSlotButton8" parent="GridContainer" instance=ExtResource("2_a62lo")]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_i2tbw")

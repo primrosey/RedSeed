@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4ppl6i0hv4aa"]
+
+[ext_resource type="Theme" uid="uid://bbc8278wyhrpy" path="res://main_theme.tres" id="1_2fgw8"]
+[ext_resource type="Script" path="res://scenes/ui/stats_ui.gd" id="2_c1bi3"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="2_r5t0u"]
+[ext_resource type="PackedScene" uid="uid://b8etv8fibn8p8" path="res://scenes/ui/health_ui.tscn" id="4_k7n8w"]
+
+[node name="StatsUI" type="HBoxContainer"]
+offset_left = -45.0
+offset_right = 45.0
+offset_bottom = 16.0
+theme = ExtResource("1_2fgw8")
+alignment = 1
+script = ExtResource("2_c1bi3")
+
+[node name="Block" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="BlockImage" type="TextureRect" parent="Block"]
+layout_mode = 2
+texture = ExtResource("2_r5t0u")
+stretch_mode = 5
+
+[node name="BlockLabel" type="Label" parent="Block"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "6
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" parent="." instance=ExtResource("4_k7n8w")]
+layout_mode = 2

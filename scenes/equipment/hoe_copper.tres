@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="HarvestingTool" load_steps=5 format=3 uid="uid://nxo1q6ha23o4"]
+
+[ext_resource type="Script" path="res://custom_resources/resource_node_type.gd" id="1_kxg11"]
+[ext_resource type="Resource" uid="uid://c44ru60yjbxbq" path="res://scenes/world/objects/harvestable/types/tillable_resource.tres" id="2_esu6n"]
+[ext_resource type="Script" path="res://custom_resources/harvesting_tool.gd" id="3_60mu1"]
+[ext_resource type="Texture2D" uid="uid://div7xbnc0cik7" path="res://assets/tools/placeholder_hoe.png" id="3_bdun4"]
+
+[resource]
+script = ExtResource("3_60mu1")
+effective_node_types = Array[ExtResource("1_kxg11")]([ExtResource("2_esu6n")])
+min_amount = 1
+max_amount = 1
+texture = ExtResource("3_bdun4")
+display_name = "Copper Hoe"
