@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://characters/warrior/cards/warrior_axe_attack.gd" id="2_m1ral"]
 [ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://art/axe.ogg" id="3_t3qsf"]
 [ext_resource type="Script" path="res://custom_resources/text_format.gd" id="4_wccsv"]
-[ext_resource type="Resource" uid="uid://ct6yqh1o1vp7w" path="res://effects/text format/damage_text_format.tres" id="5_nsxe0"]
+[ext_resource type="Resource" uid="uid://ct6yqh1o1vp7w" path="res://text_formats/damage_text_format.tres" id="5_nsxe0"]
 
 [resource]
 script = ExtResource("2_m1ral")
@@ -14,6 +14,7 @@ rarity = null
 target = 1
 cost = 1
 exhausts = null
+name = ""
 icon = ExtResource("1_ghlru")
 tooltip_text = "Deal %s damage!"
 text_formats = Array[ExtResource("4_wccsv")]([ExtResource("5_nsxe0")])

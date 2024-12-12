@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://onkytptukhio"]
+
+[ext_resource type="Script" path="res://scenes/storylets/quality_change.gd" id="1_kofrr"]
+[ext_resource type="Texture2D" uid="uid://c5lns63xamnq5" path="res://art/gold.png" id="1_nvemo"]
+[ext_resource type="Resource" uid="uid://bahfkw5kp151n" path="res://qualities/test_tina_affection.tres" id="2_ucf8o"]
+
+[node name="QualityChange" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("1_kofrr")
+quality = ExtResource("2_ucf8o")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("1_nvemo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Description" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "%s has %s from %s to %s!"
+autowrap_mode = 3

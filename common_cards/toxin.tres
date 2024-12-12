@@ -12,6 +12,7 @@ rarity = null
 target = null
 cost = 1
 exhausts = true
+name = ""
 icon = ExtResource("1_po0ef")
 tooltip_text = "[center]Slows you down. Does nothing.[/center]"
 text_formats = Array[ExtResource("3_ah0lf")]([])

@@ -1,0 +1,98 @@
+[gd_scene load_steps=5 format=3 uid="uid://d00pvt1xkgsac"]
+
+[ext_resource type="Texture2D" uid="uid://dc7crere7e7ow" path="res://art/tile_0099.png" id="1_6olov"]
+[ext_resource type="Script" path="res://scenes/storylets/storylet_interface.gd" id="1_ysv5y"]
+[ext_resource type="Resource" uid="uid://dgwvmj0c10jey" path="res://characters/warrior/warrior.tres" id="2_8mrhk"]
+[ext_resource type="PackedScene" uid="uid://bhrqh5n6yo10x" path="res://scenes/storylets/storylet_option.tscn" id="2_dhbew"]
+
+[node name="StoryletInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ysv5y")
+json_file = "{\"hi\":\"test\"}"
+char_stats = ExtResource("2_8mrhk")
+storylet_id = "test_story"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StoryletImage" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HSplitContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_6olov")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HSplitContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="StoryletTitle" type="RichTextLabel" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HSplitContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "Storylet Title"
+fit_content = true
+scroll_active = false
+
+[node name="StoryletContent" type="RichTextLabel" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HSplitContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Storylet Intro Text"
+fit_content = true
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="OptionsContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="StoryletOption" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/OptionsContainer" instance=ExtResource("2_dhbew")]
+layout_mode = 2
+
+[node name="StoryletOption2" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/OptionsContainer" instance=ExtResource("2_dhbew")]
+layout_mode = 2

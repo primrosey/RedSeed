@@ -12,6 +12,7 @@ rarity = 2
 target = 0
 cost = 3
 exhausts = false
+name = ""
 icon = ExtResource("1_61f30")
 tooltip_text = "Gain True Strength Form"
 text_formats = Array[ExtResource("3_l3oja")]([])

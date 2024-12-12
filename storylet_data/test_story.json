@@ -1,0 +1,79 @@
+{
+	"storylet_id": "test_story",
+	"storylet_image": "test_story_image.png",
+	"storylet_title": "This is a test story.",
+	"storylet_content": "Once upon a time, a cat lost a coin. Can Valentina find the coin behind the couch?",
+	"options": [
+		{
+			"option_id": "get_coin",
+			"option_title": "Retrieve the coin.",
+			"option_content": "Reach veeeeeeeeery far back and grab the coin.",
+			"option_requirements": [
+				{
+					"knicknack_coin": [1,1,0]
+				}
+			],
+			"show_if_inaccessible": false,
+			"result": [
+				{
+					"result_title": "You have the shiny!",
+					"result_content": "Valentina will surely love you forever after you have bravely retrieved the coin!",
+					"quality_changes": [
+						{
+							"tina_affection": 1						
+						}
+					],
+					"next_storylet_id": "test_story"
+				}
+			]
+		},
+		{
+			"option_id": "get_bottle",
+			"option_title": "Retrieve a bottle.",
+			"option_content": "Frankly, I don't know what a bottle has to do with reaching a coin, but it is a good first step to proving yourself.",
+			"option_requirements": [
+				{
+					"knicknack_drink": [1,1,0]
+				}
+			],
+			"show_if_inaccessible": true,
+			"result": [
+				{
+					"result_title": "Bottle get!",
+					"result_content": "You bravely reach up on a high shelf and have found a neat bottle. Better not let Valentina play with this, but you think you have honed your skills well.",
+					"quality_changes": [
+						{
+							"knicknack_coin": 1						
+						}
+					],
+					"next_storylet_id": "test_story"
+				}
+			]
+		},
+		{
+			"option_id": "think_about_it",
+			"option_title": "Think on it.",
+			"option_content": "There may be a good way to practice...",
+			"option_requirements": [
+				{
+					"knicknack_drink": [0,1,0]
+				}
+			],
+			"show_if_inaccessible": false,
+			"result": [
+				{
+					"result_title": "Practice with a bottle!",
+					"result_content": "Clearly, two round and shiny things located in varyingly inconvenient places are equivalent enough to approximate. And you know where a bottle is hiding right this very moment...",
+					"quality_changes": [
+						{
+							"knicknack_drink": 1						
+						}
+					],
+					"next_storylet_id": "test_story"
+				}
+			]
+		}
+	
+	]
+
+}

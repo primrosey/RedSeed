@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmveha0vycf4f"]
+
+[ext_resource type="Texture2D" uid="uid://dmnh5xxe2xne0" path="res://art/player_heart.png" id="1_carnd"]
+[ext_resource type="Script" path="res://scenes/storylets/quality_requirement.gd" id="2_kdqgi"]
+
+[node name="QualityRequirement" type="TextureRect"]
+custom_minimum_size = Vector2(25, 25)
+offset_right = 25.0
+offset_bottom = 25.0
+tooltip_text = "Tooltip text about why this is unlocked!"
+texture = ExtResource("1_carnd")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_kdqgi")
+requirement_comparator = 1
