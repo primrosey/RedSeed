@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhrqh5n6yo10x"]
+
+[ext_resource type="PackedScene" uid="uid://dmveha0vycf4f" path="res://scenes/storylets/quality_requirement.tscn" id="1_6jne8"]
+[ext_resource type="Script" path="res://scenes/storylets/storylet_option.gd" id="1_mrwl4"]
+[ext_resource type="Resource" uid="uid://bahfkw5kp151n" path="res://qualities/test_tina_affection.tres" id="3_nghmt"]
+[ext_resource type="Resource" uid="uid://cyg2sananp20o" path="res://qualities/test_quality_1.tres" id="4_kee2o"]
+
+[node name="StoryletOption" type="Control"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -512.0
+offset_bottom = -288.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_mrwl4")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="OptionTitle" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+bbcode_enabled = true
+text = "The title of the option!"
+
+[node name="OptionContent" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+clip_contents = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "The text of the option, detailing something that you are going to try to do or say."
+scroll_active = false
+
+[node name="QualitiesHBox" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 25)
+layout_direction = 3
+layout_mode = 2
+
+[node name="ChooseOptionButton" type="Button" parent="PanelContainer/VBoxContainer/QualitiesHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Choose"
+
+[node name="QualityRequirement" parent="PanelContainer/VBoxContainer/QualitiesHBox" instance=ExtResource("1_6jne8")]
+layout_mode = 2
+quality = ExtResource("3_nghmt")
+
+[node name="QualityRequirement2" parent="PanelContainer/VBoxContainer/QualitiesHBox" instance=ExtResource("1_6jne8")]
+layout_mode = 2
+quality = ExtResource("4_kee2o")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/QualitiesHBox/ChooseOptionButton" to="." method="_on_choose_option_button_pressed"]

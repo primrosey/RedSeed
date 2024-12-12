@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://characters/warrior/cards/warrior_big_slam.gd" id="2_3544q"]
 [ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://art/axe.ogg" id="3_qjh5a"]
 [ext_resource type="Script" path="res://custom_resources/text_format.gd" id="4_2a3im"]
-[ext_resource type="Resource" uid="uid://ct6yqh1o1vp7w" path="res://effects/text format/damage_text_format.tres" id="5_ggbeh"]
-[ext_resource type="Resource" uid="uid://c1qfr07lgvmvr" path="res://effects/text format/status_name_text_format.tres" id="6_uae3y"]
+[ext_resource type="Resource" uid="uid://ct6yqh1o1vp7w" path="res://text_formats/damage_text_format.tres" id="5_ggbeh"]
+[ext_resource type="Resource" uid="uid://c1qfr07lgvmvr" path="res://text_formats/status_name_text_format.tres" id="6_uae3y"]
 
 [resource]
 script = ExtResource("2_3544q")
@@ -15,6 +15,7 @@ rarity = 1
 target = 1
 cost = 2
 exhausts = false
+name = ""
 icon = ExtResource("1_d8mok")
 tooltip_text = "Deals %s damage and applies %s %s"
 text_formats = Array[ExtResource("4_2a3im")]([ExtResource("5_ggbeh"), null, ExtResource("6_uae3y")])

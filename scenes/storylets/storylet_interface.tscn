@@ -1,0 +1,132 @@
+[gd_scene load_steps=9 format=3 uid="uid://d00pvt1xkgsac"]
+
+[ext_resource type="Texture2D" uid="uid://dc7crere7e7ow" path="res://art/tile_0099.png" id="1_6olov"]
+[ext_resource type="Script" path="res://scenes/storylets/storylet_interface.gd" id="1_ysv5y"]
+[ext_resource type="Resource" uid="uid://dgwvmj0c10jey" path="res://characters/warrior/warrior.tres" id="2_8mrhk"]
+[ext_resource type="PackedScene" uid="uid://bhrqh5n6yo10x" path="res://scenes/storylets/storylet_option.tscn" id="2_dhbew"]
+[ext_resource type="Texture2D" uid="uid://bjmmb4dllfiud" path="res://art/arrow_small.png" id="3_nqucb"]
+[ext_resource type="Texture2D" uid="uid://buet03xict4t7" path="res://art/arrow_small_disabled.png" id="4_pu8km"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ku34d"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_c2dmg"]
+events = [SubResource("InputEventKey_ku34d")]
+
+[node name="StoryletInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ysv5y")
+char_stats = ExtResource("2_8mrhk")
+storylet_id = "test_story"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="OutsideButtonContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ExitButton" type="TextureButton" parent="MarginContainer/HBoxContainer/OutsideButtonContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+tooltip_text = "Leave"
+shortcut = SubResource("Shortcut_c2dmg")
+texture_normal = ExtResource("3_nqucb")
+texture_pressed = ExtResource("3_nqucb")
+texture_hover = ExtResource("3_nqucb")
+texture_disabled = ExtResource("4_pu8km")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StoryletImage" type="TextureRect" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HSplitContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_6olov")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HSplitContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="StoryletTitle" type="RichTextLabel" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HSplitContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "Storylet Title"
+fit_content = true
+scroll_active = false
+
+[node name="StoryletContent" type="RichTextLabel" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HSplitContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Storylet Intro Text"
+fit_content = true
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="OptionsContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="StoryletOption" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/OptionsContainer" instance=ExtResource("2_dhbew")]
+layout_mode = 2
+
+[node name="StoryletOption2" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/OptionsContainer" instance=ExtResource("2_dhbew")]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/OutsideButtonContainer/ExitButton" to="." method="_on_exit_button_pressed"]

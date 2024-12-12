@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Quality" load_steps=3 format=3 uid="uid://bahfkw5kp151n"]
+
+[ext_resource type="Script" path="res://custom_resources/quality.gd" id="1_mirvk"]
+[ext_resource type="Texture2D" uid="uid://dmnh5xxe2xne0" path="res://art/player_heart.png" id="1_s6hfg"]
+
+[resource]
+script = ExtResource("1_mirvk")
+id = "tina_affection"
+display_name = "Tina's Affection"
+icon = ExtResource("1_s6hfg")
+category = "[Test] The Dev Cats"
+display_description = "Prim's cat may be sassy, but a warm lap goes a long way"
+level = 0
+max_level = 5
+level_descriptors = Array[String](["None", "Will sit in the same room", "", "Fond of your petting style", "", "Favorite lap"])

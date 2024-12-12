@@ -22,6 +22,8 @@ Shaker="*res://global/shaker.gd"
 MusicPlayer="*res://global/music_player.tscn"
 SFXPlayer="*res://global/sfx_player.tscn"
 RNG="*res://global/rng.gd"
+QualityLibrary="*res://global/quality_library.gd"
+StoryletLibrary="*res://global/storylet_library.gd"
 
 [display]
 

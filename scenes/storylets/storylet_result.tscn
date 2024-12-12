@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://j3oudbdhagnl"]
+
+[ext_resource type="Script" path="res://scenes/storylets/storylet_result.gd" id="1_i4fk1"]
+[ext_resource type="PackedScene" uid="uid://onkytptukhio" path="res://scenes/storylets/quality_change.tscn" id="2_06r7s"]
+
+[node name="StoryletResult" type="Control"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -512.0
+offset_bottom = -288.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_i4fk1")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_direction = 2
+layout_mode = 2
+
+[node name="QualityChangeContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="QualityChange" parent="PanelContainer/VBoxContainer/QualityChangeContainer" instance=ExtResource("2_06r7s")]
+layout_mode = 2
+
+[node name="QualityChange2" parent="PanelContainer/VBoxContainer/QualityChangeContainer" instance=ExtResource("2_06r7s")]
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Continue"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

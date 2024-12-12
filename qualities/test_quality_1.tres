@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Quality" load_steps=3 format=3 uid="uid://cyg2sananp20o"]
+
+[ext_resource type="Texture2D" uid="uid://c5lns63xamnq5" path="res://art/gold.png" id="1_d1b5c"]
+[ext_resource type="Script" path="res://custom_resources/quality.gd" id="1_vod62"]
+
+[resource]
+script = ExtResource("1_vod62")
+id = "knicknack_coin"
+display_name = "Finder of Old Coins"
+icon = ExtResource("1_d1b5c")
+category = "[Test] Knicknacks"
+display_description = "You are oft able to rummage something shiny out of the odd drawer"
+level = 0
+max_level = 1
+level_descriptors = Array[String]([])
